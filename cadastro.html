@@ -1,0 +1,79 @@
+<!DOCTYPE html>␊
+<html lang="pt-BR">␊
+  <head>␊
+    <meta charset="UTF-8" />␊
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />␊
+    <title>SDR CRM Pro | Cadastro de Lead</title>
+    <link rel="stylesheet" href="style.css" />␊
+  </head>␊
+  <body data-page="cadastro">␊
+    <div class="app-shell">␊
+      <aside class="sidebar" id="sidebar"></aside>␊
+      <main class="content">
+        <header class="page-header">
+          <h1 id="formTitle">Cadastro de Lead</h1>
+          <p>Registro completo com classificação, timeline e tarefas agendadas.</p>
+        </header>
+
+        <section class="card form-card">
+          <form id="leadForm" novalidate>
+            <input type="hidden" id="leadId" name="leadId" />
+
+            <div class="form-grid">
+              <div class="field"><label for="nome">Nome *</label><input id="nome" name="nome" type="text" required /></div>
+              <div class="field"><label for="email">E-mail *</label><input id="email" name="email" type="email" required /></div>
+              <div class="field"><label for="cnpj">CNPJ *</label><input id="cnpj" name="cnpj" type="text" required /></div>
+              <div class="field"><label for="origem">Origem *</label><select id="origem" name="origem" required></select></div>
+              <div class="field"><label for="status">Classificação *</label>
+                <select id="status" name="status" required>
+                  <option value="">Selecione...</option><option value="Frio">Frio</option><option value="Morno">Morno</option><option value="Quente">Quente</option><option value="Perdido">Perdido</option>
+                </select>
+              </div>␊
+              <div class="field"><label for="prioridade">Prioridade *</label><select id="prioridade" name="prioridade" required></select></div>
+            </div>
+
+            <div id="hotBox" class="card nested-card hidden">
+              <h3>Dados do vendedor (lead quente)</h3>
+              <div class="form-grid">
+                <div class="field"><label for="vendedorNome">Nome do vendedor *</label><input id="vendedorNome" name="vendedorNome" type="text" /></div>
+                <div class="field"><label for="vendedorData">Data/hora do agendamento *</label><input id="vendedorData" name="vendedorData" type="datetime-local" /></div>
+                <div class="field"><label for="proximoStatus">Status do próximo passo *</label><input id="proximoStatus" name="proximoStatus" type="text" placeholder="Ex: reunião agendada" /></div>
+              </div>
+            </div>
+
+            <div class="field"><label for="tags">Tags (separadas por vírgula)</label><input id="tags" name="tags" type="text" placeholder="SaaS, ICP A, decisor" /></div>
+            <div class="field"><label for="observacao">Observação</label><textarea id="observacao" name="observacao" rows="3"></textarea></div>
+
+            <div class="card nested-card">
+              <h3>Timeline de interações</h3>
+              <div class="inline-form two-cols">
+                <input id="interacaoTexto" type="text" placeholder="Registrar nova interação" />
+                <button id="addInteraction" type="button" class="btn-secondary">Adicionar interação</button>
+              </div>
+              <ul id="timelineList" class="list-clean compact-list"></ul>
+            </div>␊
+␊
+            <div class="card nested-card">
+              <h3>Tarefas / lembretes agendados</h3>
+              <div class="inline-form task-grid">
+                <input id="taskTitulo" type="text" placeholder="Título da tarefa" />
+                <input id="taskData" type="datetime-local" />
+                <select id="taskStatus"><option>Pendente</option><option>Em andamento</option><option>Concluída</option></select>
+                <button id="addTask" type="button" class="btn-secondary">Adicionar tarefa</button>
+              </div>
+              <ul id="taskList" class="list-clean compact-list"></ul>
+            </div>
+
+            <div class="form-actions">
+              <a href="leads.html" class="btn-secondary">Cancelar</a>
+              <button type="submit" class="btn-primary">Salvar lead</button>
+            </div>
+            <p id="formError" class="error-message" aria-live="polite"></p>␊
+          </form>␊
+        </section>␊
+      </main>␊
+    </div>␊
+␊
+    <script type="module" src="js/app.js"></script>
+  </body>␊
+</html>␊

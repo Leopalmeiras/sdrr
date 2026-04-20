@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDR CRM Pro | Leads</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="leads">
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <main class="content">
+        <header class="page-header page-header-row">
+          <div>
+            <h1>Leads</h1>
+            <p>Filtro, edição e exportação de pipeline para operação SDR.</p>
+          </div>
+          <div class="actions-row">
+            <a class="btn-secondary" href="cadastro.html">Novo lead</a>
+            <button id="exportPdfBtn" class="btn-secondary" type="button">Exportar PDF</button>
+            <button id="exportCsvBtn" class="btn-primary" type="button">Exportar planilha</button>
+          </div>
+        </header>
+
+        <section class="card">
+          <div class="filters-row filters-row-4">
+            <input id="searchInput" type="search" placeholder="Buscar por nome, email, CNPJ, tags..." />
+            <select id="statusFilter"><option value="">Todos os status</option></select>
+            <select id="origemFilter"><option value="">Todas as origens</option></select>
+            <select id="prioridadeFilter"><option value="">Todas as prioridades</option></select>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>E-mail</th>
+                  <th>Origem</th>
+                  <th>Status</th>
+                  <th>Prioridade</th>
+                  <th>Tags</th>
+                  <th>Vendedor</th>
+                  <th>Próximo passo</th>
+                  <th>Atualizado em</th>
+                  <th>Editar</th>
+                  <th>Excluir</th>
+                </tr>
+              </thead>
+              <tbody id="leadsTbody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

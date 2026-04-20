@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SDR CRM Pro | Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="login" class="login-body">
+    <main class="login-container">
+      <section class="login-card">
+        <h1>SDR CRM Pro</h1>
+        <p class="subtitle">CRM profissional para SDR, responsivo e pronto para GitHub Pages.</p>
+
+        <form id="loginForm" novalidate>
+          <label for="username">Usuário</label>
+          <input id="username" name="username" type="text" placeholder="Digite seu usuário" required />
+
+          <label for="password">Senha</label>
+          <input id="password" name="password" type="password" placeholder="Digite sua senha" required />
+
+          <button type="submit">Entrar</button>
+          <p id="loginError" class="error-message" aria-live="polite"></p>
+        </form>
+
+        <div class="hint-box">
+          <strong>Usuários padrão habilitados:</strong>
+          <ul>
+            <li><code>admin</code> (administrador)</li>
+            <li><code>sdr</code> (time comercial)</li>
+          </ul>
+          <small>As senhas padrão não são exibidas nesta interface.</small>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
